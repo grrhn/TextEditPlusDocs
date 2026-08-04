@@ -14,7 +14,7 @@ hero:
       link: /api/themes
     - theme: alt
       text: View on GitHub
-      link: https://github.com/grrhn/TextEditPlus
+      link: https://github.com/grrhn/TextEditPlusDocs
 
 features:
   - icon: 🎨

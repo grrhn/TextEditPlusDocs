@@ -53,7 +53,7 @@ export default defineConfig({
       }
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/grrhn/TextEditPlus' }
+      { icon: 'github', link: 'https://github.com/grrhn/TextEditPlusDocs' }
     ],
     footer: {
       message: 'Released under the MIT License.',
