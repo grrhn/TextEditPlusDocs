@@ -1,78 +1,56 @@
-# TextEdit+ SDK Documentation
+# TextEdit+ Extension SDK & Documentation
 
-VitePress site for [TextEdit+](https://play.google.com/store/apps/details?id=com.krk.texteditplus) extension authors.
+Official documentation and SDK reference for building extensions, themes, and language supports for **[TextEdit+](https://play.google.com/store/apps/details?id=com.krk.texteditplus)**.
 
-## Local development
+📖 **Live Documentation Website:** [https://grrhn.github.io/TextEditPlusDocs/](https://grrhn.github.io/TextEditPlusDocs/)
+
+---
+
+## 🚀 Overview
+
+TextEdit+ supports custom extensions built using standard JavaScript and the Monaco Editor runtime. Developers can create:
+
+- 🎨 **Themes:** Custom syntax highlighting and UI themes (Dracula, One Dark Pro, Monokai, Nord, etc.)
+- 🌐 **Language Intelligence:** Syntax definition and bracket matching (TOML, Vue, Rust, etc.)
+- 🛠️ **Utility Tools:** Selection transformations, JSON formatters, Base64 tools, Markdown linters
+- 📌 **Sidebar Panels:** Custom UI panels in the editor sidebar (Quick Actions, Markdown Live Preview)
+- ⚙️ **Settings & Commands:** Register custom options and editor command palette actions
+
+---
+
+## 📚 Documentation Quick Links
+
+- [🚀 Getting Started](https://grrhn.github.io/TextEditPlusDocs/getting-started)
+- [🧩 Extension Anatomy](https://grrhn.github.io/TextEditPlusDocs/anatomy)
+- [📖 API Reference](https://grrhn.github.io/TextEditPlusDocs/api/themes)
+  - [Themes API](https://grrhn.github.io/TextEditPlusDocs/api/themes)
+  - [Languages API](https://grrhn.github.io/TextEditPlusDocs/api/languages)
+  - [Commands API](https://grrhn.github.io/TextEditPlusDocs/api/commands)
+  - [Settings API](https://grrhn.github.io/TextEditPlusDocs/api/settings)
+  - [Sidebar API](https://grrhn.github.io/TextEditPlusDocs/api/sidebar)
+  - [File System API](https://grrhn.github.io/TextEditPlusDocs/api/fs)
+  - [Lifecycle API](https://grrhn.github.io/TextEditPlusDocs/api/lifecycle)
+- [🛒 Publishing to Extension Store](https://grrhn.github.io/TextEditPlusDocs/catalog-submission)
+
+---
+
+## 🛠️ Local Development
+
+To run the documentation site locally:
 
 ```bash
+# Install dependencies
 npm install
+
+# Start local dev server
 npm run dev
-```
 
-Open http://localhost:5173.
-
-## Build
-
-```bash
+# Build production bundle
 npm run build
 ```
 
-Output goes to `.vitepress/dist/`.
+---
 
-## Deploying to GitHub Pages
+## 📄 License
 
-1. Push this repo to GitHub.
-2. Settings → Pages → Source: GitHub Actions.
-3. Add `.github/workflows/deploy.yml`:
-
-```yaml
-name: Deploy docs
-on:
-  push: { branches: [main] }
-permissions: { contents: read, pages: write, id-token: write }
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: 20, cache: npm }
-      - run: npm ci
-      - run: npm run build
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with: { path: .vitepress/dist }
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment: { name: github-pages, url: '${{ steps.deployment.outputs.page_url }}' }
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
-```
-
-If hosting under `<user>.github.io/<repo>/`, edit `.vitepress/config.mjs` and change `base` to `'/<repo>/'`.
-
-## Deploying to Vercel
-
-`vercel --prod` from the repo root — VitePress is auto-detected.
-
-## Structure
-
-```
-extension-docs/
-├── index.md                ← landing page
-├── getting-started.md
-├── anatomy.md
-├── catalog-submission.md
-├── api/                    ← 8 API reference pages
-│   ├── themes.md
-│   ├── languages.md
-│   ├── dialog.md
-│   ├── commands.md
-│   ├── settings.md
-│   ├── sidebar.md
-│   ├── fs.md
-│   └── lifecycle.md
-└── .vitepress/config.mjs
-```
+Built for TextEdit+.
