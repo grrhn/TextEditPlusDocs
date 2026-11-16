@@ -26,7 +26,8 @@ ZIPs are capped at 5 MB per entry. Anything larger is rejected on install.
 | `author`      | string  | no       | Free text. |
 | `type`        | string  | no       | `"extension"` (default), `"skill"`, or `"plugin"`. Skill packages (`"skill"`) require no `main.js` and are exempt from the free extension cap. |
 | `category`    | string  | no       | Store Browse filter category: `"ai"`, `"skill"`, `"theme"`, `"language"`, or `"tool"`. |
-| `permissions` | array   | no       | Required for AI SDK APIs: `"ai.tools"`, `"ai.context"`, `"ai.prompt"`, `"ai.ui"`. Shown in the install trust dialog. |
+| `permissions` | array   | no       | Required for AI SDK APIs: `"ai.tools"`, `"ai.context"`, `"ai.prompt"`, `"ai.ui"`. Shown in the profile modal & trust dialog. |
+| `screenshots` | array   | no       | Optional relative paths or HTTPS image URLs rendered as a preview carousel in the in-app extension profile dialog. |
 | `main`        | string  | no       | Entry script path. Defaults to `main.js` (or `""` when `type` is `"skill"`). |
 | `data`        | array   | no       | Filenames the runtime should pre-load and pass to your code as `data`. |
 | `premium`     | boolean | no       | If `true`, only Premium users can install/enable this extension. |

@@ -30,7 +30,9 @@ extensions/
 └── <your-id>/
     ├── extension.zip       ← REQUIRED
     ├── icon.png            ← optional, square, ≥128×128
-    └── README.md           ← optional
+    ├── README.md           ← optional, rendered in the in-app extension profile
+    └── screenshots/        ← optional, PNG/JPG/WEBP gallery shown in the profile modal
+        └── preview.png
 ```
 
 `<your-id>` must match your manifest's `id` and match `^[a-zA-Z0-9_-]+$`.
