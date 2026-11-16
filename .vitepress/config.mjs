@@ -20,6 +20,7 @@ export default defineConfig({
     nav: [
       { text: 'Guide', link: '/getting-started' },
       { text: 'API', link: '/api/themes' },
+      { text: 'Skills', link: '/skills' },
       { text: 'Catalog', link: '/catalog-submission' },
       { text: 'App', link: 'https://play.google.com/store/apps/details?id=com.krk.texteditplus' }
     ],
@@ -29,7 +30,8 @@ export default defineConfig({
         items: [
           { text: 'Overview',         link: '/' },
           { text: 'Getting Started',  link: '/getting-started' },
-          { text: 'Extension Anatomy',link: '/anatomy' }
+          { text: 'Extension Anatomy',link: '/anatomy' },
+          { text: 'Agent Skills (SKILL.md)', link: '/skills' }
         ]
       },
       {
@@ -37,6 +39,8 @@ export default defineConfig({
         items: [
           { text: 'Themes',           link: '/api/themes' },
           { text: 'Languages',        link: '/api/languages' },
+          { text: 'Markers (Diagnostics)', link: '/api/markers' },
+          { text: 'AI Extensions',    link: '/api/ai' },
           { text: 'Toast / Dialog',   link: '/api/dialog' },
           { text: 'Commands',         link: '/api/commands' },
           { text: 'Settings',         link: '/api/settings' },

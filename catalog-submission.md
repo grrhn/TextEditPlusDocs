@@ -37,7 +37,10 @@ extensions/
 
 ## Step 4 — Rebuild the catalog
 
-The build script scans `extensions/*/extension.zip`, computes SHA-256 for each, and rewrites `catalog.json` in sorted order.
+The build script scans `extensions/*/extension.zip`, reads `manifest.json` (or `SKILL.md` frontmatter for standalone skill packages), computes SHA-256 for each, and rewrites `catalog.json` in sorted order.
+
+- Set `"category"` (`"ai"`, `"skill"`, `"theme"`, `"language"`, `"tool"`) and `"type"` (`"extension"` or `"skill"`) in your `manifest.json` so your package appears under the right filter chip in **Extensions → Browse**.
+- Skill packs (`"type": "skill"`, `"category": "skill"`) are exempt from the free extension cap in the app.
 
 ```bash
 node scripts/build-catalog.js

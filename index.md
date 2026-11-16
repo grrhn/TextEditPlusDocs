@@ -4,7 +4,7 @@ layout: home
 hero:
   name: TextEdit+ SDK
   text: Build extensions for a mobile code editor.
-  tagline: Themes, language packs, sidebar panels, and tools — written in plain JavaScript, distributed through a public catalog.
+  tagline: Themes, language packs, AI tools, sidebar panels, and SKILL.md packs — written in plain JavaScript or Markdown, distributed through a public catalog.
   actions:
     - theme: brand
       text: Get Started
@@ -13,16 +13,19 @@ hero:
       text: API Reference
       link: /api/themes
     - theme: alt
+      text: Agent Skills
+      link: /skills
+    - theme: alt
       text: View on GitHub
       link: https://github.com/grrhn/TextEditPlusDocs
 
 features:
   - icon: 🎨
-    title: Eight typed APIs
-    details: Themes, Languages, Commands, Settings, Sidebar panels, sandboxed FS, Dialog, Lifecycle. No native code required.
-  - icon: 🧩
-    title: Plain JavaScript
-    details: Extensions ship as ZIPs containing a manifest.json and a main.js. No build step, no transpiler, no framework.
+    title: Ten typed APIs
+    details: Themes, Languages, Markers, Commands, Settings, Sidebar panels, sandboxed FS, AI Extensions, Dialog, Lifecycle. No native code required.
+  - icon: 🧠
+    title: SKILL.md & AI Extensions
+    details: Ship Progressive Disclosure SKILL.md packs (free, no code limits) or register custom AI agent tools, @context providers, and /commands.
   - icon: 🔒
     title: Sandbox by default
     details: Each extension runs with window.Android undefined. The native bridge is only reachable through the public TextEditPlus API. File and settings storage are namespaced per extension.
@@ -34,7 +37,8 @@ features:
 ## What you can build
 
 - **Themes** that contribute new color schemes to the editor's theme picker.
-- **Language packs** with Monarch tokenizers, brackets, and auto-close pairs.
+- **Language packs & linters** with Monarch tokenizers, brackets, auto-close pairs, and `TextEditPlus.markers` diagnostics.
+- **AI Extensions & `SKILL.md` packs** that add agent tools, `@` context providers, `/slash` commands, or markdown skill workflows.
 - **Tool extensions** that register commands, surface them in the palette, and transform text in the editor.
 - **Sidebar panels** with their own HTML/CSS that can trigger commands and show status.
 - **Stateful utilities** that persist settings (Slider/Switch/Dropdown/TextField widgets are rendered automatically) and small data files.

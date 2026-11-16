@@ -24,7 +24,10 @@ ZIPs are capped at 5 MB per entry. Anything larger is rejected on install.
 | `version`     | string  | no       | Recommend semver. Used by the Browse tab to flag available updates. |
 | `description` | string  | no       | Short blurb shown in the store. |
 | `author`      | string  | no       | Free text. |
-| `main`        | string  | no       | Entry script path. Defaults to `main.js`. |
+| `type`        | string  | no       | `"extension"` (default), `"skill"`, or `"plugin"`. Skill packages (`"skill"`) require no `main.js` and are exempt from the free extension cap. |
+| `category`    | string  | no       | Store Browse filter category: `"ai"`, `"skill"`, `"theme"`, `"language"`, or `"tool"`. |
+| `permissions` | array   | no       | Required for AI SDK APIs: `"ai.tools"`, `"ai.context"`, `"ai.prompt"`, `"ai.ui"`. Shown in the install trust dialog. |
+| `main`        | string  | no       | Entry script path. Defaults to `main.js` (or `""` when `type` is `"skill"`). |
 | `data`        | array   | no       | Filenames the runtime should pre-load and pass to your code as `data`. |
 | `premium`     | boolean | no       | If `true`, only Premium users can install/enable this extension. |
 
@@ -38,7 +41,7 @@ function(TextEditPlus, monaco, editor, data, extensionId, Android) { /* your cod
 
 | Global         | What it is |
 |----------------|-----------|
-| `TextEditPlus` | The SDK surface — `.themes`, `.languages`, `.commands`, `.settings`, `.sidebar`, `.fs`, `.toast`, `.dialog`, `.setPluginInit`, `monaco`, `editor`. |
+| `TextEditPlus` | The SDK surface — `.themes`, `.languages`, `.markers`, `.commands`, `.settings`, `.sidebar`, `.fs`, `.ai`, `.toast`, `.dialog`, `.setPluginInit`, `monaco`, `editor`. |
 | `monaco`       | The full Monaco editor namespace. Same one VS Code uses. |
 | `editor`       | The active editor instance. `editor.getValue()`, `editor.getSelection()`, etc. |
 | `data`         | Parsed object of any files listed in manifest's `data` array. |
